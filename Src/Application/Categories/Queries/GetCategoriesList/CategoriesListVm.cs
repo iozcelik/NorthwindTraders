@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Northwind.Application.Categories.Queries.GetCategoriesList
-{
+namespace Northwind.Application.Categories.Queries.GetCategoriesList {
     public class CategoriesListVm
     {
         public IList<CategoryDto> Categories { get; set; }

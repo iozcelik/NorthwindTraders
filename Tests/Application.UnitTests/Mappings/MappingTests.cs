@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Northwind.Application.Categories.Queries.GetCategoriesList;
+using Northwind.Application.Categories;
 using Northwind.Application.Customers.Queries.GetCustomerDetail;
 using Northwind.Application.Customers.Queries.GetCustomersList;
 using Northwind.Application.Employees.Queries.GetEmployeeDetail;
@@ -11,8 +11,7 @@ using Northwind.Domain.Entities;
 using Shouldly;
 using Xunit;
 
-namespace Northwind.Application.UnitTests.Mappings
-{
+namespace Northwind.Application.UnitTests.Mappings {
     public class MappingTests : IClassFixture<MappingTestsFixture>
     {
         private readonly IConfigurationProvider _configuration;

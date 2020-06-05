@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -6,10 +7,14 @@ namespace Northwind.WebUI.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public abstract class BaseController : ControllerBase
+    public abstract class BaseController : Controller
     {
         private IMediator _mediator;
 
         protected IMediator Mediator => _mediator ??= HttpContext.RequestServices.GetService<IMediator>();
+
+        private IMapper _mapper;
+
+        protected IMapper Mapper => _mapper ??= HttpContext.RequestServices.GetService<IMapper>();
     }
 }

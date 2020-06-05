@@ -1,0 +1,33 @@
+﻿@using Northwind.Application.Categories.Queries.GetCategoriesList
+@model CategoriesListVm
+
+@{
+    ViewData["Title"] = "Categories";
+ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p>
+    <a asp-action="Upsert">Add new category</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Category
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Categories) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Upsert", new { Id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

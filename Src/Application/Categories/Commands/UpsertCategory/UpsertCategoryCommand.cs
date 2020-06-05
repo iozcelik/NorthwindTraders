@@ -1,12 +1,13 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
+using AutoMapper;
 using MediatR;
 using Northwind.Application.Common.Interfaces;
+using Northwind.Application.Common.Mappings;
 using Northwind.Domain.Entities;
 
-namespace Northwind.Application.Categories.Commands.UpsertCategory
-{
-    public class UpsertCategoryCommand : IRequest<int>
+namespace Northwind.Application.Categories.Commands.UpsertCategory {
+    public class UpsertCategoryCommand : IRequest<int>, IMapFrom<CategoryDto> 
     {
         public int? Id { get; set; }
 
@@ -48,6 +49,10 @@ namespace Northwind.Application.Categories.Commands.UpsertCategory
 
                 return entity.CategoryId;
             }
+        }
+
+        public void Mapping(Profile profile) {
+            profile.CreateMap<CategoryDto, UpsertCategoryCommand>();
         }
     }
 }

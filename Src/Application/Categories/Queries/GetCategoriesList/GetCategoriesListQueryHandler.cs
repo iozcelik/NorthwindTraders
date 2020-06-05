@@ -6,8 +6,7 @@ using Northwind.Application.Common.Interfaces;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Northwind.Application.Categories.Queries.GetCategoriesList
-{
+namespace Northwind.Application.Categories.Queries.GetCategoriesList {
     public class GetCategoriesListQueryHandler : IRequestHandler<GetCategoriesListQuery, CategoriesListVm>
     {
         private readonly INorthwindDbContext _context;
